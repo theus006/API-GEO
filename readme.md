@@ -5,17 +5,6 @@
 <ul>
     <li>GET /paises -> Retorna os dados de todos os países.</li>
     <li>GET /paises/{id do país} -> Retorna os dados de um país pesquisado por seu ID.</li>
-    <p>Exemplo de resposta:</p>
-    <p>
-        [{
-            "id":34,
-            "nome":"Itália",
-            "capital":"Roma",
-            "idh":"0.89",
-            "populacao":"58.8 milhões","pib":"2010.00","id_continente":4,
-            "historia":"Berço do Império Romano e do Renascimento."
-        }]  
-    </p>
 </ul>
 <h2>Informações Retornadas Para Cada País</h2>
 <ul>
