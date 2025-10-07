@@ -8,7 +8,7 @@
 </ul>
 <h2>Informações Retornadas Para Cada País</h2>
 <ul>
-    <li>NSeu ID na base de dados</li>
+    <li>Seu ID na base de dados</li>
     <li>Nome do país</li>
     <li>Capital</li>
     <li>IDH</li>
