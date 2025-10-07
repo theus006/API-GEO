@@ -1,10 +1,21 @@
 <h1>API-GEO Projeto de uma API Geográfica🌍</h1>
-<p>Bem vindo ao meu projeto de API utilizando Node.js e Express.</p>
+<p>Bem vindo ao meu projeto de um sistema Node.js e Express.</p>
 <p>O sistema consiste em uma API que permite pesquisar sobre alguns países dos 5 continentes.</p>
-<h2>Rotas Possíveis</h2>
+<h2>Rotas Possíveis Até o Momento</h2>
 <ul>
     <li>GET /paises -> Retorna os dados de todos os países.</li>
     <li>GET /paises/{id do país} -> Retorna os dados de um país pesquisado por seu ID.</li>
+    <p>Exemplo de resposta:</p>
+    <p>
+        [{
+            "id":34,
+            "nome":"Itália",
+            "capital":"Roma",
+            "idh":"0.89",
+            "populacao":"58.8 milhões","pib":"2010.00","id_continente":4,
+            "historia":"Berço do Império Romano e do Renascimento."
+        }]  
+    </p>
 </ul>
 <h2>Informações Retornadas Para Cada País</h2>
 <ul>
