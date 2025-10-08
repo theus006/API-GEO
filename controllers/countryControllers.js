@@ -19,9 +19,9 @@ exports.getAllCountryData = async (req, res) => {
 }
 
 //função que que visa retornar todos os dados de um país da database, informado pelo id
-exports.getCountryDataById = async (req, res) => {
+exports.getAllCountryDataById = async (req, res) => {
     try { //tenta obter do model o resultado da consulta, passando o id recebido na URL
-        const data = await model.getCountryDataById(req.params.id);
+        const data = await model.getAllCountryDataById(req.params.id);
         if(data == null) { //se não encontrar resultados, envia a resposta padrão para o caso
             return res.status(404).json(notFoundResponse);
         }

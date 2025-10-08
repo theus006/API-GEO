@@ -7,7 +7,7 @@ const countryControllers = require("../controllers/countryControllers");
 
 //redireciona as requisições GET para os controllers com as lógicas correspondentes
 router.get("/", countryControllers.getAllCountryData);
-router.get("/:id", countryControllers.getCountryDataById);
+router.get("/:id", countryControllers.getAllCountryDataById);
 
 //exporta o objeto de roteamento para outros módulos
 module.exports = router;
