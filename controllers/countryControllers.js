@@ -1,45 +1,32 @@
-//importa o objeto de conexão com o banco
-const conn = require("../settings/db");
+//importa o model correspondente as ações na tabela "Paises"
+const model = require("../models/countryModels");
 
-//função que executa as ações no banco, podendo ser tratada com await e try catch... recebe os agrumentos:
-//sql = comando a executar no banco e params = [] parâmtros para busca com prepared statements "?"
-function dbQuery(sql, params = []) {
-    //o retorno da função é uma Promise (recurso usado para atividades assíncronas)
-    return new Promise((res, rej) => { //rej -> retorno para erros na query | res -> retorna o resultado
-        conn.query(sql, params, (err, result) => {
-            if(err) { //se tem algum erro na consulta, a promise é rejeitada... retornando o erro e caindo no catch
-                return rej("Erro na query: " + err.message);
-            }
-            //se não houve erro, retorna o resultado, executando o try completo
-            return res(result);
-        });
-    });
-}
+//variáveis para padronizar respostas
+const notFoundResponse = {'message': 'No such data.'};
+const errorResponse = {'message': 'Internal server error.'};
 
-//o exports antes das funções, permite que sejam acessadas em outros módulos pelo require("caminho do arquivo")
-//função assincrona que retorna todos os países do banco
-exports.getNames = async (req, res) => {
-    try {
-        //executa a função com a query sql passada, usando o await para esperar a resolução da promise
-        const names = await dbQuery("select * from Paises");
-        //se der tudo certo com a consulta, retorna os resultados
-        return res.status(200).json(names);
-    } catch (error) { //se houver erro, após o await, o código do catch é executado
-        //retorna o erro
-        return res.status(500).json(error);
+//função que que visa retornar todos os dados dos países na database
+exports.getAllCountryData = async (req, res) => {
+    try { //tenta obter do model o resultado da consulta
+        const data = await model.getAllCountryData();
+        if(data == null) { //se não encontrar resultados, envia a resposta padrão para o caso
+            return res.status(404).json(notFoundResponse);
+        }
+        return res.status(200).json(data);
+    } catch (error) { //se algo der errado na busca, envia a resposta padrão para o caso
+        return res.status(500).json(errorResponse);
     }
 }
 
-//função assincrona que retorna os dados de um país pelo ID
-exports.getNameById = async (req, res) => {
-    try {
-        //executa a função com a query sql passada e o parâmetro do ID recebido pela URL,
-        //usando o await para esperar a resolução da promise
-        const names = await dbQuery("select * from Paises where id = ?", [req.params.id]);
-        //se der tudo certo com a consulta, retorna os resultados
-        return res.status(200).json(names);
-    } catch (error) { //se houver erro, após o await, o código do catch é executado
-        //retorna o erro
-        return res.status(500).json(error);
+//função que que visa retornar todos os dados de um país da database, informado pelo id
+exports.getCountryDataById = async (req, res) => {
+    try { //tenta obter do model o resultado da consulta, passando o id recebido na URL
+        const data = await model.getCountryDataById(req.params.id);
+        if(data == null) { //se não encontrar resultados, envia a resposta padrão para o caso
+            return res.status(404).json(notFoundResponse);
+        }
+        return res.status(200).json(data);
+    } catch (error) { //se algo der errado na busca, envia a resposta padrão para o caso
+        return res.status(500).json(errorResponse);
     }
 }

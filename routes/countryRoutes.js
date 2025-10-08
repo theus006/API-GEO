@@ -6,8 +6,8 @@ const router = express.Router();
 const countryControllers = require("../controllers/countryControllers");
 
 //redireciona as requisições GET para os controllers com as lógicas correspondentes
-router.get("/", countryControllers.getNames);
-router.get("/:id", countryControllers.getNameById);
+router.get("/", countryControllers.getAllCountryData);
+router.get("/:id", countryControllers.getCountryDataById);
 
 //exporta o objeto de roteamento para outros módulos
 module.exports = router;

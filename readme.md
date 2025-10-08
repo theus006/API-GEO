@@ -12,7 +12,7 @@
     <li>Nome do país</li>
     <li>Capital</li>
     <li>IDH</li>
-    <li>populacao</li>
+    <li>Populacao</li>
     <li>ID do continente</li>
     <li>Uma história do país</li>
 </ul>
@@ -23,4 +23,12 @@
     <li>Mysql2</li>
     <li>Nodemon (dev)</li>
     <li>Dotenv</li>
+</ul>
+<h2>Configurações .env</h2>
+<ul>
+    <li>DB_HOST -> IP do banco de dados</li>
+    <li>DB_USER -> Usuário do banco de dados</li>
+    <li>DB_PASSWORD -> Senha do banco de dados</li>
+    <li>DB_NAME -> Nome da database</li>
+    <li>PORT -> Porta que receberá as requisições</li>
 </ul>
