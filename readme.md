@@ -1,6 +1,6 @@
 <h1>API-GEO Projeto de uma API Geográfica🌍</h1>
 <p>Bem vindo ao meu projeto de um sistema Node.js e Express.</p>
-<p>O sistema consiste em uma API que permite pesquisar sobre alguns países dos 5 continentes. Fiz esse sistema com o objetivo de reforçar meus conhecimentos a respito de conceitos de MVC e APIs REST e RESTful.</p>
+<p>O sistema consiste em uma API que permite pesquisar sobre alguns países dos cinco continentes. Criei esse sistema com o objetivo de reforçar meus conhecimentos a respito de conceitos de MVC e APIs REST e RESTful.</p>
 <h2>Rotas Possíveis Até o Momento</h2>
 <ul>
     <li>GET /paises -> Retorna os dados de todos os países.</li>
@@ -18,11 +18,11 @@
 </ul>
 <h2>Tecnologias Utilizadas</h2>
 <ul>
-    <li>Node.js</li>
-    <li>Express.js</li>
-    <li>Mysql2</li>
-    <li>Nodemon (dev)</li>
-    <li>Dotenv</li>
+    <li>Node.js (https://www.nodejs.tech/pt-br)</li>
+    <li>Express.js (https://expressjs.com/)</li>
+    <li>Mysql2 (https://www.npmjs.com/package/mysql2)</li>
+    <li>Nodemon (https://nodemon.io/)</li>
+    <li>Dotenv (https://www.npmjs.com/package/dotenv)</li>
 </ul>
 <h2>Configurações .env</h2>
 <ul>
